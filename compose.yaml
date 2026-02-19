@@ -13,5 +13,7 @@ services:
       - /mnt:/mnt
     privileged: true
     init: true
+    stop_signal: SIGKILL
+    stop_grace_period: 1s
     tty: true
     stdin_open: true

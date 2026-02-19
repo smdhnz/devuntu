@@ -47,5 +47,7 @@ ENV UV_INSTALL_DIR=/opt/uv
 COPY --chown=ubuntu:ubuntu entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN sudo chmod +x /usr/local/bin/entrypoint.sh
 
+STOPSIGNAL SIGKILL
+
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 CMD ["/bin/bash"]
