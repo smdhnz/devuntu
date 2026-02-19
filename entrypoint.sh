@@ -1,6 +1,16 @@
 #!/bin/bash
 set -e
 
+# /etc/profile.d/ 下の設定を読み込み（PATHなどを有効化）
+if [ -d /etc/profile.d ]; then
+    for i in /etc/profile.d/*.sh; do
+        if [ -r "$i" ]; then
+            . "$i"
+        fi
+    done
+    unset i
+fi
+
 # Docker ソケットの権限変更
 if [ -e /var/run/docker.sock ]; then
     sudo chmod 666 /var/run/docker.sock
