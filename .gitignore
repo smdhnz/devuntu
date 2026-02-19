@@ -23,6 +23,7 @@ home/**
 
 !home/.gemini/
 !home/.gemini/settings.json
+!home/.gemini/AGENTS.md
 
 # gitignore 自身は含める
 !.gitignore
