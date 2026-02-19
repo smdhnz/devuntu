@@ -10,7 +10,7 @@ services:
       # ホストの Docker 操作用
       - /var/run/docker.sock:/var/run/docker.sock
       # Windows の C ドライブをマウント (パス解決のため)
-      - /mnt/c:/mnt/c
+      - /mnt:/mnt
     privileged: true
     tty: true
     stdin_open: true
