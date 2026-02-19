@@ -1,0 +1,16 @@
+services:
+  devuntu:
+    build: .
+    image: devuntu:latest
+    container_name: devuntu
+    network_mode: host
+    volumes:
+      # ホストの ./home をコンテナの /home/ubuntu にマウント
+      - ./home:/home/ubuntu
+      # ホストの Docker 操作用
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Windows の C ドライブをマウント (パス解決のため)
+      - /mnt/c:/mnt/c
+    privileged: true
+    tty: true
+    stdin_open: true

@@ -1,0 +1,28 @@
+# Docker Settings
+.env
+compose.override.yaml
+
+# ---------------------------------------------------------
+# 鉄壁の home/ 管理
+# ---------------------------------------------------------
+
+# 全てのファイルとディレクトリを再帰的に無視
+home/**
+
+# --- 1. 特定のファイルのみを許可 ---
+!home/.bashrc
+!home/.profile
+!home/.bash_aliases
+!home/.bash_functions
+
+# --- 2. フォルダ構造を辿るための「通り道」を許可 ---
+# ※これらはディレクトリ自体を許可するだけで、中身は無視されたままです
+!home/.config/
+!home/.config/nvim/
+!home/.config/nvim/init.lua
+
+!home/.gemini/
+!home/.gemini/settings.json
+
+# gitignore 自身は含める
+!.gitignore

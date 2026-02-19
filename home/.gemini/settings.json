@@ -1,0 +1,31 @@
+{
+  "general": {
+    "preferredEditor": "nvim",
+    "disableAutoUpdate": true,
+    "previewFeatures": true,
+    "enableAutoUpdate": false,
+    "allowHomeDirectory": true
+  },
+  "ui": {
+    "theme": "Atom One",
+    "showStatusInTitle": true,
+    "hideTips": true,
+    "hideBanner": true,
+    "useAlternateBuffer": false
+  },
+  "privacy": {
+    "usageStatisticsEnabled": false
+  },
+  "context": {
+    "fileName": [
+      "AGENTS.md",
+      "GEMINI.md"
+    ]
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
+  "mcpServers": {}
+}

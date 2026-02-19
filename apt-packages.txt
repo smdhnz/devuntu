@@ -1,0 +1,6 @@
+build-essential
+unzip
+xsel
+ripgrep
+ca-certificates
+jq
