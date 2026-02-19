@@ -35,7 +35,7 @@ sudo service docker restart
 │   ├── .bash_functions # 自作関数 (activate, tree, xcat等)
 │   ├── .config/nvim/   # Neovim (Lazy.nvim) 設定
 │   └── .gemini/        # Gemini CLI 設定
-├── install/            # ビルド時に実行されるツール別セットアップスクリプト
+├── tools/              # ビルド時に実行されるツール別セットアップスクリプト
 ├── apt-packages.txt    # 追加したいaptパッケージのリスト
 ├── Dockerfile          # 環境構築レシピ
 ├── compose.yaml        # コンテナ実行設定
@@ -90,7 +90,7 @@ alias devuntu='cd ~/.dotfiles && docker compose run --rm devuntu'
 
 ### パッケージの追加
 - **標準的なツール**: `apt-packages.txt` にパッケージ名を追記してビルド。
-- **特殊なツール**: `install/` フォルダに新しい `.sh` スクリプトを作成してビルド。
+- **特殊なツール**: `tools/` フォルダに新しい `.sh` スクリプトを作成し、`Dockerfile` に `RUN bash /tmp/tools/your-script.sh` のように追記してビルド。
 
 ### エイリアス・関数の追加
 - `home/.bash_aliases` または `home/.bash_functions` を編集してください。コンテナ内・ホスト側のどちらで編集しても、即座に同期されます。

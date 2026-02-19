@@ -29,10 +29,15 @@ RUN mkdir -p /opt/volta /opt/bun /opt/uv && chown -R ubuntu:ubuntu /opt/
 USER ubuntu
 WORKDIR /home/ubuntu
 
-# 5. 各種ツールの自動インストール (install/*.sh を全実行)
-COPY --chown=ubuntu:ubuntu install/ /tmp/install/
-RUN for f in /tmp/install/*.sh; do bash "$f"; done && \
-    rm -rf /tmp/install
+# 5. 各種ツールの自動インストール
+COPY --chown=ubuntu:ubuntu tools/ /tmp/tools/
+RUN bash /tmp/tools/nvim.sh
+RUN bash /tmp/tools/volta.sh
+RUN bash /tmp/tools/bun.sh
+RUN bash /tmp/tools/uv.sh
+RUN bash /tmp/tools/lazygit.sh
+RUN bash /tmp/tools/lazydocker.sh
+RUN rm -rf /tmp/tools
 
 # 環境変数の設定 (コンテナ内での永続化用)
 ENV VOLTA_HOME=/opt/volta
