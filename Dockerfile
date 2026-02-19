@@ -38,11 +38,10 @@ RUN bash /tmp/tools/uv.sh
 RUN bash /tmp/tools/lazygit.sh
 RUN rm -rf /tmp/tools
 
-# 環境変数の設定 (コンテナ内での永続化用)
+# 環境変数の設定
 ENV VOLTA_HOME=/opt/volta
 ENV BUN_INSTALL=/opt/bun
 ENV UV_INSTALL_DIR=/opt/uv
-ENV PATH=${VOLTA_HOME}/bin:${BUN_INSTALL}/bin:${UV_INSTALL_DIR}:/opt/nvim/bin:${PATH}
 
 # 6. エントリポイント
 COPY --chown=ubuntu:ubuntu entrypoint.sh /usr/local/bin/entrypoint.sh

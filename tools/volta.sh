@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 export VOLTA_HOME=/opt/volta
-curl https://get.volta.sh | bash
-export PATH="$VOLTA_HOME/bin:$PATH"
+curl https://get.volta.sh | bash -s -- --skip-setup
+echo "export VOLTA_HOME=\"$VOLTA_HOME\"" | sudo tee /etc/profile.d/volta.sh
+echo 'export PATH="$VOLTA_HOME/bin:$PATH"' | sudo tee -a /etc/profile.d/volta.sh
 volta install node
 # Global npm packages
 volta install @google/gemini-cli

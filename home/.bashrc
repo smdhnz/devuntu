@@ -115,8 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="/opt/volta/bin:/opt/bun/bin:/opt/uv:/opt/nvim-linux-x86_64/bin:$PATH"
-
 # Load custom functions
 if [ -f ~/.bash_functions ]; then
     source ~/.bash_functions

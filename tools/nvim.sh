@@ -14,4 +14,5 @@ fi
 curl -LO "https://github.com/neovim/neovim/releases/latest/download/nvim-linux-${NVIM_ARCH}.tar.gz"
 sudo mkdir -p /opt/nvim
 sudo tar -C /opt/nvim --strip-components=1 -xzf "nvim-linux-${NVIM_ARCH}.tar.gz"
+echo 'export PATH="/opt/nvim/bin:$PATH"' | sudo tee /etc/profile.d/nvim.sh
 rm "nvim-linux-${NVIM_ARCH}.tar.gz"
