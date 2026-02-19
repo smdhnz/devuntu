@@ -2,7 +2,7 @@
 set -e
 
 # PATH の設定
-export PATH="/opt/volta/bin:/opt/bun/bin:/opt/uv:/opt/nvim-linux-x86_64/bin:$PATH"
+export PATH="/opt/volta/bin:/opt/bun/bin:/opt/uv:/opt/nvim/bin:$PATH"
 
 # Docker ソケットの権限変更
 if [ -e /var/run/docker.sock ]; then
@@ -12,7 +12,7 @@ fi
 # .bashrc への追記処理
 if [ -f "$HOME/.bashrc" ]; then
     if ! grep -q "/opt/volta/bin" "$HOME/.bashrc"; then
-        echo 'export PATH="/opt/volta/bin:/opt/bun/bin:/opt/uv:/opt/nvim-linux-x86_64/bin:$PATH"' >> "$HOME/.bashrc"
+        echo 'export PATH="/opt/volta/bin:/opt/bun/bin:/opt/uv:/opt/nvim/bin:$PATH"' >> "$HOME/.bashrc"
     fi
 
     if ! grep -q "source ~/.bash_functions" "$HOME/.bashrc"; then
