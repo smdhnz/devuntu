@@ -12,5 +12,6 @@ services:
       # Windows の C ドライブをマウント (パス解決のため)
       - /mnt:/mnt
     privileged: true
+    init: true
     tty: true
     stdin_open: true
